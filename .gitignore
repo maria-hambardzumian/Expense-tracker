@@ -1,0 +1,22 @@
+node_modules
+.DS_Store
+*.log
+npm-debug.log*
+
+# Backend
+expense-tracker-back/.env
+expense-tracker-back/.env.*
+expense-tracker-back/dist
+expense-tracker-back/generated/prisma
+
+# Frontend
+expense-tracker-front/.env*
+expense-tracker-front/.next/
+expense-tracker-front/out/
+expense-tracker-front/build
+expense-tracker-front/node_modules
+expense-tracker-front/.pnp
+expense-tracker-front/.pnp.*
+expense-tracker-front/.vercel
+expense-tracker-front/*.tsbuildinfo
+expense-tracker-front/next-env.d.ts
