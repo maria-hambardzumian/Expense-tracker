@@ -1,0 +1,166 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+  transition: width 0.2s ease;
+
+  &.collapsed {
+    width: 60px;
+  }
+}
+
+.logo {
+  padding: 20px 16px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6366f1;
+  border-bottom: 1px solid #f3f4f6;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 56px;
+
+  .collapsed & {
+    justify-content: center;
+    padding: 20px 0 16px;
+  }
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+  transition: color 0.1s, border-color 0.1s;
+
+  &:hover {
+    color: #6366f1;
+    border-color: #6366f1;
+  }
+}
+
+.nav {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .collapsed & {
+    padding: 12px 8px;
+    align-items: center;
+  }
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+  transition: background-color 0.1s, color 0.1s;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+  }
+
+  &.active {
+    background-color: #eef2ff;
+    color: #6366f1;
+    font-weight: 500;
+  }
+
+  .collapsed & {
+    padding: 8px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.navIcon {
+  flex-shrink: 0;
+}
+
+.footer {
+  padding: 16px;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .collapsed & {
+    padding: 16px 8px;
+    align-items: center;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userIcon {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  min-width: 0;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userHandle {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #6b7280;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+
+  &:hover {
+    color: #111827;
+  }
+
+  .collapsed & {
+    justify-content: center;
+  }
+}
