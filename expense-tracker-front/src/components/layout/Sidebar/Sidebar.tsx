@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { CircleUserRound, LogOut, LayoutDashboard, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 import cn from 'classnames/bind';
 import { useState } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import { useAuthStore } from '@/store/authStore';
 import { authApi } from '@/lib/api/auth.api';
 import styles from './Sidebar.module.scss';
@@ -19,6 +20,7 @@ const NAV_ITEMS = [
 export function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
+  const queryClient = useQueryClient();
   const clearAuth = useAuthStore((s) => s.clearAuth);
   const user = useAuthStore((s) => s.user);
   const [collapsed, setCollapsed] = useState(false);
@@ -26,6 +28,7 @@ export function Sidebar() {
   const handleLogout = async () => {
     const refreshToken = useAuthStore.getState().getRefreshToken();
     if (refreshToken) await authApi.logout(refreshToken).catch(() => null);
+    queryClient.clear();
     clearAuth();
     router.push('/login');
   };
